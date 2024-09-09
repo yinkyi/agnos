@@ -1,27 +1,21 @@
 import React from "react";
 
-import { AbdominalProps } from "../../assets/libs/interface";
+import { AbdominalProps } from "../libs/interface";
 
-export const AbdominalSelectedArea: React.FC<AbdominalProps> = ({
-  handleClick,
+export const SelectedArea: React.FC<AbdominalProps> = ({
   isShow,
-  buttonPosition,
-  labelPosition,
   labelImage,
+  labelPosition,
   highlighImage,
   selectedAllArea,
 }) => {
   return (
     <>
-      <button
-        onClick={handleClick}
-        className={`absolute ${buttonPosition}  w-[10%] h-[10%]  bg-transparent rounded-full z-10`}
-      ></button>
       {isShow && !selectedAllArea && (
         <img
           src={labelImage}
           alt="epigastrium active"
-          className={`absolute ${labelPosition}  object-cover w-full h-full`}
+          className={`absolute ${labelPosition} object-cover w-full h-full`}
         />
       )}
       {isShow && (

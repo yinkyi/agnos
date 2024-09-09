@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import allOverHighlightImage from "../../assets/pics/all-over-highlight.png";
+import allOverHighlightImage from "../../assets/pics/others-highlight.png";
 
 interface AllOverHighlightProps {
   handleAllPainClick: (currentAllPainValue: boolean) => void;
   selectedAllArea: boolean;
 }
-export const AllOverHighlight: React.FC<AllOverHighlightProps> = ({
+export const AllOverHighlightFinger: React.FC<AllOverHighlightProps> = ({
   handleAllPainClick,
   selectedAllArea,
 }) => {
@@ -24,7 +24,7 @@ export const AllOverHighlight: React.FC<AllOverHighlightProps> = ({
     <>
       <button
         onClick={handleButtonClick}
-        className={`absolute  w-[30%] h-[10%] left-[48%] bottom-0 -translate-x-1/2 mb-4 bg-transparent rounded-lg  z-10 `}
+        className={`absolute  w-[71%] h-[10%] left-[48%] bottom-0 -translate-x-1/2 mb-2 bg-transparent rounded-lg  z-10 `}
       ></button>
       {allPainValue && (
         <img
