@@ -29,7 +29,7 @@ const Questions: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-6 bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden bg-gray-100">
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
         {/* Stepper Header */}
 
@@ -51,7 +51,7 @@ const Questions: React.FC = () => {
             </div>
 
             {/* Stepper Content */}
-            <div className="mb-4">
+            <div className="flex-grow mb-4">
               <div className="relative sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto h-[auto] flex items-center justify-center">
                 {steps[currentStep - 1].content}
               </div>
