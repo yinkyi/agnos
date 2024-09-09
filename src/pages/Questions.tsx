@@ -48,7 +48,11 @@ const Questions: React.FC = () => {
         </div>
 
         {/* Stepper Content */}
-        <div className="mb-4">{steps[currentStep - 1].content}</div>
+        <div className="mb-4">
+          <div className="relative sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] mx-auto h-[auto] flex items-center justify-center">
+            {steps[currentStep - 1].content}
+          </div>
+        </div>
 
         {/* Stepper Controls */}
         <div className="flex justify-between">
