@@ -20,7 +20,7 @@ export const AbdominalBaseImage: React.FC = () => {
   };
 
   return (
-    <div className="relative w-[auto] h-[400px] mx-auto ">
+    <div className="relative sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] h-[auto] mx-auto flex items-center justify-center">
       <img
         src={defaultAbs}
         alt="Body Diagram"

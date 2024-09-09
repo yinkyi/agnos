@@ -12,7 +12,7 @@ export const AbdominalBottomLeft: React.FC<AbdominalProps> = ({
     <>
       <button
         onClick={handleClick}
-        className="absolute top-[53.3%] left-[35%] w-[40px] h-[40px] bg-transparent  rounded-full z-10"
+        className="absolute top-[53.3%] left-[35%]  w-[10%] h-[10%]  bg-transparent  rounded-full z-10"
       ></button>
       {isShow && (
         <>
@@ -24,7 +24,7 @@ export const AbdominalBottomLeft: React.FC<AbdominalProps> = ({
           <img
             src={rlqHighlightBottomLeft}
             alt="epigastrium Highlight"
-            className="absolute left-[1.4%] object-cover w-full h-full -top-[1.1%] z-1"
+            className="absolute left-[0.1%] object-cover w-full h-full top-[0.1%] z-1"
           />
         </>
       )}
