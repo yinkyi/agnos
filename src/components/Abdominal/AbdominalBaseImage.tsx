@@ -19,10 +19,8 @@ export const AbdominalBaseImage: React.FC = () => {
     }));
   };
 
-  console.log(chooseParts);
-
   return (
-    <div className="relative w-[400px] h-[400px] mx-auto ">
+    <div className="relative w-[auto] h-[400px] mx-auto ">
       <img
         src={defaultAbs}
         alt="Body Diagram"
