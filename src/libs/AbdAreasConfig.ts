@@ -13,16 +13,6 @@ import ruqhighlightTopLeft from "../assets/pics/ruq-highlight.png";
 import luqActiveTopRight from "../assets/pics/luq-active.png";
 import luqHighlightTopRight from "../assets/pics/luq-highlight.png";
 
-export const initialValues: Record<string, boolean> = {
-  top: false,
-  "top-left": false,
-  "top-right": false,
-  center: false,
-  bottom: false,
-  "bottom-left": false,
-  "bottom-right": false,
-};
-
 export const areasConfig = [
   {
     id: "center",

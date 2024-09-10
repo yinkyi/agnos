@@ -1,32 +1,45 @@
 import React, { useEffect, useState } from "react";
 import defaultFinger from "../../assets/pics/default-finger.png";
-import { areasConfig, initialValues } from "../../libs/FingerAreaConfig";
+import { areasConfig } from "../../libs/FingerAreaConfig";
 import { AllOverHighlightFinger } from "./AllOverHighlightFinger";
 import { SelectedArea } from "../SelectedArea";
 import { jointBtnAreaConfig } from "../../libs/FingerAreaConfig";
+import { useDispatch, useSelector } from "react-redux";
+import { ReduxInitialState } from "../../libs/interface";
+import { painActions } from "../../store/pain";
 
 export const FingerBase: React.FC = () => {
-  const [chooseParts, setChooseParts] =
-    useState<Record<string, boolean>>(initialValues);
+  const fingerState = useSelector(
+    (state: ReduxInitialState) => state.pain.finger
+  );
+  const dispatch = useDispatch();
   const [isAllSelected, setIsAllSelected] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsAllSelected(Object.values(chooseParts).every((value) => value));
-  }, [chooseParts]);
+    setIsAllSelected(Object.values(fingerState).every((value) => value));
+  }, [fingerState]);
 
   const handleClick = (part: string) => {
-    setChooseParts((prev) => ({
-      ...prev,
-      [part]: !prev[part],
-    }));
+    dispatch(
+      painActions.setFingerPain({
+        finger: {
+          ...fingerState,
+          [part]: !fingerState[part],
+        },
+      })
+    );
   };
 
   const handleAllPainClick = (status: boolean) => {
-    const result = Object.keys(chooseParts).reduce((acc, key: string) => {
+    const result = Object.keys(fingerState).reduce((acc, key: string) => {
       acc[key] = status;
       return acc;
     }, {} as Record<string, boolean>);
-    setChooseParts(result);
+    dispatch(
+      painActions.setFingerPain({
+        finger: result,
+      })
+    );
   };
 
   return (
@@ -39,7 +52,7 @@ export const FingerBase: React.FC = () => {
       {areasConfig.map((area) => (
         <SelectedArea
           key={area.id}
-          isShow={chooseParts[area.id]}
+          isShow={fingerState[area.id]}
           labelImage={area.labelImage}
           highlighImage={area.highlightImage}
           selectedAllArea={isAllSelected}

@@ -5,12 +5,6 @@ import mcpHighlight from "../assets/pics/mcp-highlight.png";
 import pipActive from "../assets/pics/pip-active.png";
 import pipHighlight from "../assets/pics/pip-highlight.png";
 
-export const initialValues: Record<string, boolean> = {
-  dip: false,
-  pip: false,
-  mcp: false,
-};
-
 export const areasConfig = [
   {
     id: "dip",

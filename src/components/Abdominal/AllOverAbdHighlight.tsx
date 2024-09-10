@@ -5,7 +5,7 @@ interface AllOverHighlightProps {
   handleAllPainClick: (currentAllPainValue: boolean) => void;
   selectedAllArea: boolean;
 }
-export const AllOverHighlight: React.FC<AllOverHighlightProps> = ({
+export const AllOverAbdHighlight: React.FC<AllOverHighlightProps> = ({
   handleAllPainClick,
   selectedAllArea,
 }) => {

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { FingerBase } from "../components/Finger/FingerBase";
 import { AbdominalBase } from "../components/Abdominal/AbdominalBase";
+import { useDispatch } from "react-redux";
+import { painActions } from "../store/pain";
 
 const Questions: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
-
+  const dispatch = useDispatch();
   const steps = [
     {
       id: 1,
@@ -19,6 +21,9 @@ const Questions: React.FC = () => {
   ];
 
   const handleNext = () => {
+    if (currentStep === 2) {
+      dispatch(painActions.reset());
+    }
     setCurrentStep((prev) => prev + 1);
   };
 
@@ -68,7 +73,7 @@ const Questions: React.FC = () => {
                     : "bg-blue-500 text-white"
                 }`}
               >
-                Previous
+                Back
               </button>
               <button
                 onClick={handleNext}
